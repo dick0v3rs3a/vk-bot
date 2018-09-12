@@ -3,11 +3,9 @@ import os
 import importlib
 from commands import command_list
 
-
-
 def load_modules():
    # путь от рабочей директории, ее можно изменить в настройках приложения
-   files = os.listdir("vkbot/command")
+   files = os.listdir("command")
    modules = filter(lambda x: x.endswith('.py'), files)
    for m in modules:
        importlib.import_module("commands." + m[0:-3])
